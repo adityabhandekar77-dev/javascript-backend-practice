@@ -166,3 +166,89 @@ getUser()
 
 
 
+    function getProduct() {
+
+    return new Promise((resolve) => {
+
+        setTimeout(() => {
+
+            resolve({
+                name: "Mouse",
+                price: 1200
+            });
+
+        }, 2000);
+
+    });
+}
+
+
+async function showProduct() {
+
+    const result = await getProduct();
+
+    console.log(result);
+    console.log(result.name);
+    console.log(result.price);
+
+
+
+    
+
+}
+
+showProduct();
+
+
+
+function getUser() {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            reject("User not found!");
+        }, 2000);
+
+    });
+}
+
+async function showUser() {
+
+    try {
+
+        const user = await getUser();
+
+        console.log(user);
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+}
+
+showUser();
+
+
+async function showUser() {
+    try{
+        const user = await getUser();
+        console.log(user);
+
+    } catch (error){
+        console.log(error);
+    }
+}
+
+
+
+    
+showUser();
+
+
+
+
+
+
+
+
