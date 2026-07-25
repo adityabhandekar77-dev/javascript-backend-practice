@@ -76,6 +76,17 @@ console.log(movie.director?.name);
 
 console.log(movie.actor?.name);
 
+let gameScore =null;
+
+let displayScore = gameScore ?? "1";
+
+console.log(displayScore);
+
+
+
+
+
+
 
 
 
