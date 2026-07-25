@@ -1,4 +1,4 @@
- /*const add = function(a, b) {
+ const add = function(a, b) {
     return a + b;
 };
 
@@ -7,10 +7,10 @@ console.log(add(5, 3));
 
 if (true) {
     let message = "Hello";
-    console.log(message); // works
+    console.log(message); 
 }
 
-console.log(message); // ERROR
+console.log(message); 
 
 
 const add = (a, b) => a + b;
@@ -21,23 +21,20 @@ const add = (a, b) => {
 
 
 
-/// normal 
 
 function square(number) {
     return number * number;
 }
 
-// arroy 
 
 const square = (number) => {
     return number * number;
 };
 
-// short arrow 
+
 
 const square = number => number * number;
 
-*/
 
 
 const multiply = (a, b) => a * b;
