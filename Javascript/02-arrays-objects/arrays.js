@@ -1,4 +1,4 @@
-/*const numbers = [10, 20 , 40 , 30];
+const numbers = [10, 20 , 40 , 30];
 
 console.log(numbers);
 
@@ -35,7 +35,6 @@ numbers.unshift(10);
 numbers.shift();
 
 
-// looping 
 
 
 const numbers = [10, 20 , 30 , 40 , 50];
@@ -47,8 +46,6 @@ for(let i = 0; i< numbers.length; i++){
 for(const number of numbers){
     console.log(number);
 }
-*/
-//exercise
 
 const numbers = [12, 7, 20, 5, 18, 3, 10];
 

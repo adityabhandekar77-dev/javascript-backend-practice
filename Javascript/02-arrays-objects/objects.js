@@ -14,7 +14,7 @@ console.log(player.score);
 const student = {
     name: "Aditya",
     age: 20,
-    course: "BCA",
+    course: "BTECH",
     marks: 8.95,
     skills: ["C", "C++", "JavaScript"]
 };

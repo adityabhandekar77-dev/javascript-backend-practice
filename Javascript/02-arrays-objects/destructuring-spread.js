@@ -19,7 +19,7 @@ console.log(skills);
 
 const student = {
     name: "Aditya",
-    course: "BCA",
+    course: "BTECH",
     cgpa: 8.95,
     skills: ["C", "C++", "JavaScript"]
 };
