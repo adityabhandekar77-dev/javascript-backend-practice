@@ -1,6 +1,7 @@
 import express from "express";
 
 const app = express();
+app.use(express.json());
 
 const games = [
     { id: 1, title: "Hades", rating: 9.3 },
@@ -22,6 +23,13 @@ app.get("/games/:id", (req, res) => {
     const game = games.find(game => game.id === id);
 
     res.json(game);
+});
+
+app.post("/games", (req, res) => {
+
+    console.log(req.body);
+
+    res.send("Game received");
 });
 
 app.listen(3000, () => {
