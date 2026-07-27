@@ -1,21 +1,13 @@
-const newGame = {
-    title: "Prey",
-    rating: 8.7
-};
-
-async function createGame() {
+async function deleteGame() {
     try {
-        const response = await fetch("http://localhost:3000/games", {
-            method: "POST",
+        const response = await fetch(
+            "http://localhost:3000/games/2",
+            {
+                method: "DELETE"
+            }
+        );
 
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify(newGame)
-        });
-
-        const data = await response.text();
+        const data = await response.json();
 
         console.log(data);
 
@@ -24,4 +16,4 @@ async function createGame() {
     }
 }
 
-createGame();
+deleteGame();
