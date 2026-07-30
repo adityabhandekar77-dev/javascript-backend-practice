@@ -1,4 +1,7 @@
+import "dotenv/config";
 import express from "express";
+import pool from "./database/db.js";
+
 
 const app = express();
 app.use(express.json());
@@ -46,6 +49,23 @@ app.get("/games/:id", (req, res) => {
     const game = games.find(game => game.id === id);
 
     res.json(game);
+});
+
+app.get("/db-test", async (req, res) => {
+    try {
+        const result = await pool.query(
+            "SELECT * FROM games ORDER BY id;"
+        );
+
+        res.json(result.rows);
+
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            message: error.message
+        });
+    }
 });
 
 app.post("/games", (req, res) => {
@@ -99,6 +119,11 @@ app.delete("/games/:id", (req, res) => {
     });
 });
 
+app.get("/test-error", (req, res) => {
+    throw new Error("Something exploded!");
+});
+
+
 app.use((err, req, res, next) => {
     console.error(err.message);
 
@@ -107,6 +132,9 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
