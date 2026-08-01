@@ -1,0 +1,10 @@
+node_modules
+.env
+
+PORT=4000
+
+DB_HOST=localhost
+DB_PORT=3000
+DB_USER=postgres
+DB_PASSWORD=Aditya2345678
+DB_NAME=gamesdb
